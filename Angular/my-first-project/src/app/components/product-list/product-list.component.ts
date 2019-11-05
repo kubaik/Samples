@@ -18,7 +18,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
   }
 
-  share() {
-    alert('aaa');
+  share(product: Product) {
+    alert(`Share: Produto: ${product.id} - ${product.name}`);
   }
 }
