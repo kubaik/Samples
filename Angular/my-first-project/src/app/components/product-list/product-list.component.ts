@@ -21,4 +21,8 @@ export class ProductListComponent implements OnInit {
   share(product: Product) {
     alert(`Share: Produto: ${product.id} - ${product.name}`);
   }
+
+  onNotify(product: Product) {
+    alert(`Notify Alert: Produto: ${product.id} - ${product.name}`);
+  }
 }
