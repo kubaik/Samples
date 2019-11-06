@@ -9,6 +9,8 @@ import { ProductAlertsComponent } from './components/product-alerts/product-aler
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ShippingComponent } from './components/shipping/shipping.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule, MatSliderModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,10 @@ import { ShippingComponent } from './components/shipping/shipping.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
