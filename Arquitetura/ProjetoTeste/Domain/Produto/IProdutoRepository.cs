@@ -1,6 +1,6 @@
-using ProjetoTeste.Entitiy;
+using ProjetoTeste.Domain.Base;
 
-namespace ProjetoTeste.Repository
+namespace ProjetoTeste.Domain.Produto
 {
     public interface IProdutoRepository : IRepositoryBase<Produto>
     {

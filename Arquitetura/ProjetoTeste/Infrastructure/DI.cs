@@ -1,13 +1,10 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using ProjetoTeste.Context;
-using ProjetoTeste.Repository;
-using ProjetoTeste.Service;
+using ProjetoTeste.Domain.Produto;
+using ProjetoTeste.Infrastructure.Context;
 
-namespace ProjetoTeste
+namespace ProjetoTeste.Infrastructure
 {
     public static class DI
     {
@@ -25,7 +22,7 @@ namespace ProjetoTeste
             Services.AddScoped<TesteContext>(provider =>
             {
                 var optionsBuilder = new DbContextOptionsBuilder<TesteContext>();
-                optionsBuilder.UseSqlite("Data Source=/home/fabio/Sources/Pessoal/Samples/Arquitetura/ProjetoTeste/App_Data/Teste.db");
+                optionsBuilder.UseSqlite("Data Source=../../../App_Data/Teste.db");
                 return new TesteContext(optionsBuilder.Options);
             });
 

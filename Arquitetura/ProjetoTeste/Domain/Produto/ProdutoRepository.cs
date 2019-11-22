@@ -1,7 +1,7 @@
-using ProjetoTeste.Context;
-using ProjetoTeste.Entitiy;
+using ProjetoTeste.Domain.Base;
+using ProjetoTeste.Infrastructure.Context;
 
-namespace ProjetoTeste.Repository
+namespace ProjetoTeste.Domain.Produto
 {
     public class ProdutoRepository : RepositoryBase<Produto>, IProdutoRepository
     {

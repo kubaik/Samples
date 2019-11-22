@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using ProjetoTeste.Entitiy;
+using ProjetoTeste.Domain.Produto;
 
-namespace ProjetoTeste.Context
+namespace ProjetoTeste.Infrastructure.Context
 {
     public class TesteContext : DbContext
     {

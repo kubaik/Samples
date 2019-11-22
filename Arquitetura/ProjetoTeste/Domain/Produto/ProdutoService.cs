@@ -1,7 +1,6 @@
-using ProjetoTeste.Entitiy;
-using ProjetoTeste.Repository;
+using ProjetoTeste.Domain.Base;
 
-namespace ProjetoTeste.Service
+namespace ProjetoTeste.Domain.Produto
 {
     public class ProdutoService : ServiceBase<IProdutoRepository, Produto>, IProdutoService
     {

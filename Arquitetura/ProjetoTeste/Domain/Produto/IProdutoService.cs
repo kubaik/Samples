@@ -1,6 +1,6 @@
-using ProjetoTeste.Entitiy;
+using ProjetoTeste.Domain.Base;
 
-namespace ProjetoTeste.Service
+namespace ProjetoTeste.Domain.Produto
 {
     public interface IProdutoService : IServiceBase<Produto>
     {

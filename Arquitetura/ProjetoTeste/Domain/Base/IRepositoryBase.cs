@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using ProjetoTeste.Entitiy;
 
-namespace ProjetoTeste.Repository
+namespace ProjetoTeste.Domain.Base
 {
     public interface IRepositoryBase<TEntity> where TEntity : EntityBase
     {

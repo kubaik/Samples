@@ -12,6 +12,11 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.1" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Design" Version="1.1.6" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.1" />
+      <PackageReference Include="Maestria.Extensions" Version="1.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="App_Data" />
     </ItemGroup>
 
 </Project>

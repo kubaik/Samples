@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using ProjetoTeste.Context;
-using ProjetoTeste.Entitiy;
+using ProjetoTeste.Infrastructure.Context;
 
-namespace ProjetoTeste.Repository
+namespace ProjetoTeste.Domain.Base
 {
     public abstract class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : EntityBase
     {

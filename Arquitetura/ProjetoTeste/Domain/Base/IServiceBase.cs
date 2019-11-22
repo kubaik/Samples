@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using ProjetoTeste.Entitiy;
 
-namespace ProjetoTeste.Service
+namespace ProjetoTeste.Domain.Base
 {
     public interface IServiceBase<TEntity> where TEntity : EntityBase
     {

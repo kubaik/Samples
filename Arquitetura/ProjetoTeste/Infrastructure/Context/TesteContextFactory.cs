@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace ProjetoTeste.Context
+namespace ProjetoTeste.Infrastructure.Context
 {
     public class TesteContextFactory : IDesignTimeDbContextFactory<TesteContext>
     {

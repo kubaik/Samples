@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using ProjetoTeste.Entitiy;
-using ProjetoTeste.Repository;
 
-namespace ProjetoTeste.Service
+namespace ProjetoTeste.Domain.Base
 {
     public abstract class ServiceBase<TRepository, TEntity> : IServiceBase<TEntity>
         where TRepository : IRepositoryBase<TEntity>

@@ -1,4 +1,4 @@
-namespace ProjetoTeste.Entitiy
+namespace ProjetoTeste.Domain.Base
 {
     public class EntityBase
     {
