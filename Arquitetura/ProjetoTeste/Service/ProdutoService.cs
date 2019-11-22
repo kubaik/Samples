@@ -3,9 +3,9 @@ using ProjetoTeste.Repository;
 
 namespace ProjetoTeste.Service
 {
-    public class ProdutoService : ServiceBase<IRepositoryBase<Produto>, Produto>
+    public class ProdutoService : ServiceBase<IProdutoRepository, Produto>, IProdutoService
     {
-        public ProdutoService(IRepositoryBase<Produto> repository) : base(repository)
+        public ProdutoService(IProdutoRepository repository) : base(repository)
         {
         }
     }

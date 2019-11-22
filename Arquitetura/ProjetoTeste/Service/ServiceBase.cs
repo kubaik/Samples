@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using ProjetoTeste.Entitiy;
 using ProjetoTeste.Repository;
 
 namespace ProjetoTeste.Service
 {
-    public abstract class ServiceBase<TRepository, TEntity>
+    public abstract class ServiceBase<TRepository, TEntity> : IServiceBase<TEntity>
         where TRepository : IRepositoryBase<TEntity>
         where TEntity : EntityBase
     {
@@ -13,6 +14,10 @@ namespace ProjetoTeste.Service
         {
             _repository = repository;
         }
+
+        public IEnumerable<TEntity> GetAll() => _repository.GetAll();
+
+        public TEntity Get(int id) => _repository.Get(id);
 
         public void Insert(TEntity entity) => _repository.Insert(entity);
 

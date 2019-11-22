@@ -12,15 +12,18 @@ namespace ProjetoTeste.Context
         public TesteContext(DbContextOptions options) : base(options)
         {
         }
-        
+
         public DbSet<Produto> Produto { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            base.OnConfiguring(optionsBuilder);
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Produto>().HasKey(t => t.Id);
+            base.OnModelCreating(builder);
         }
     }
 }
