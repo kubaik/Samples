@@ -6,23 +6,23 @@ namespace ProjetoTeste.Domain.Base
         where TRepository : IRepositoryBase<TEntity>
         where TEntity : EntityBase
     {
-        private readonly IRepositoryBase<TEntity> _repository;
+        protected IRepositoryBase<TEntity> Repository { get; }
 
         protected ServiceBase(IRepositoryBase<TEntity> repository)
         {
-            _repository = repository;
+            Repository = repository;
         }
 
-        public IEnumerable<TEntity> GetAll() => _repository.GetAll();
+        public IEnumerable<TEntity> GetAll() => Repository.GetAll();
 
-        public TEntity Get(int id) => _repository.Get(id);
+        public TEntity Get(int id) => Repository.Get(id);
 
-        public void Insert(TEntity entity) => _repository.Insert(entity);
+        public void Insert(TEntity entity) => Repository.Insert(entity);
 
-        public void Update(TEntity entity) => _repository.Update(entity);
+        public void Update(TEntity entity) => Repository.Update(entity);
 
-        public void Delete(TEntity entity) => _repository.Delete(entity);
+        public void Delete(TEntity entity) => Repository.Delete(entity);
 
-        public void SaveChanges() => _repository.SaveChanges();
+        public void SaveChanges() => Repository.SaveChanges();
     }
 }

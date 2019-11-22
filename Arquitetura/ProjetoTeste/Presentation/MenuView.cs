@@ -18,6 +18,7 @@ namespace ProjetoTeste.Presentation
                 Console.WriteLine();
                 Console.WriteLine("1-Listar produto");
                 Console.WriteLine("2-Cadastrar produto");
+                Console.WriteLine("3-Filtrar produto");
                 Console.WriteLine("9-Sair");
                 Console.Write("Opção > ");
                 op = Console.ReadLine();
@@ -31,6 +32,9 @@ namespace ProjetoTeste.Presentation
                     case "2":
                         CadastrarProduto();
                         break;
+                    case "3":
+                        FiltarProdutos();
+                        break;
                     case "9":
                         Console.WriteLine();
                         Console.WriteLine("Fim!");
@@ -43,6 +47,21 @@ namespace ProjetoTeste.Presentation
             }
         }
 
+        private void ImprimirProdutos()
+        {
+            Console.WriteLine("Produtos atuais");
+            
+            using var scope = DI.ServiceProvider.CreateScope(); // Muito importando o "using" desta linha para executar o dispose ao final do uso deste método
+            var service = scope.ServiceProvider.GetService<IProdutoService>();
+            var produtos = service.GetAll();
+            
+            if (produtos.IsNullOrEmpty())
+                Console.WriteLine("Nenhum produto cadastrado.");
+            else
+                foreach (var p in produtos)
+                    Console.WriteLine($"{p.Id} - {p.Nome} - {p.DataCadastro}");
+        }
+        
         private void CadastrarProduto()
         {
             Console.WriteLine("Cadastrando produto"); // Muito importando o "using" desta linha para executar o dispose ao final do uso deste método
@@ -57,17 +76,19 @@ namespace ProjetoTeste.Presentation
             Console.WriteLine();
             Console.WriteLine($"Produto cadastrado - Id: {produto.Id} - Nome: {produto.Nome} - Data: {produto.DataCadastro}");
         }
-
-        private void ImprimirProdutos()
+        
+        private void FiltarProdutos()
         {
-            Console.WriteLine("Produtos atuais");
+            Console.WriteLine("Buscar produtos atuais");
+            Console.Write("Parte do nome para filtrar: ");
+            var filtro = Console.ReadLine();
             
             using var scope = DI.ServiceProvider.CreateScope(); // Muito importando o "using" desta linha para executar o dispose ao final do uso deste método
             var service = scope.ServiceProvider.GetService<IProdutoService>();
-            var produtos = service.GetAll();
+            var produtos = service.Filtrar(filtro);
             
             if (produtos.IsNullOrEmpty())
-                Console.WriteLine("Nenhum produto cadastrado.");
+                Console.WriteLine($"Nenhum produto encontrado com o texto '{filtro}'.");
             else
                 foreach (var p in produtos)
                     Console.WriteLine($"{p.Id} - {p.Nome} - {p.DataCadastro}");

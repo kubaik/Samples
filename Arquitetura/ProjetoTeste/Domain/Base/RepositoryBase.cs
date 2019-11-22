@@ -16,6 +16,7 @@ namespace ProjetoTeste.Domain.Base
         }
 
         public IEnumerable<TEntity> GetAll() => DbSet.ToList();
+        public IQueryable<TEntity> Query() => DbSet.AsQueryable();
 
         public TEntity Get(int id) => DbSet.Find(id);
 
