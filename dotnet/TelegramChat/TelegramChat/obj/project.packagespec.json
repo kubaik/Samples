@@ -1,0 +1,55 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/TelegramChat.csproj",
+    "projectName": "TelegramChat",
+    "projectPath": "/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/TelegramChat.csproj",
+    "outputPath": "/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/obj/",
+    "projectStyle": "PackageReference",
+    "originalTargetFrameworks": [
+      "netcoreapp2.2"
+    ],
+    "sources": {
+      "/home/fabio/.nuget/packages/": {},
+      "http://192.168.101.31:9500/v3/index.json": {},
+      "https://api.nuget.org/v3/index.json": {},
+      "https://nuget.telerik.com/nuget/": {}
+    },
+    "frameworks": {
+      "netcoreapp2.2": {
+        "projectReferences": {}
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.2": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.2.0, )",
+          "autoReferenced": true
+        },
+        "Telegram.Bot": {
+          "target": "Package",
+          "version": "[14.12.0, )"
+        }
+      },
+      "imports": [
+        "net461",
+        "net462",
+        "net47",
+        "net471",
+        "net472",
+        "net48"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

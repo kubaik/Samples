@@ -1,0 +1,10 @@
+/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/bin/Debug/netcoreapp2.2/TelegramChat.deps.json
+/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/bin/Debug/netcoreapp2.2/TelegramChat.runtimeconfig.json
+/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/bin/Debug/netcoreapp2.2/TelegramChat.runtimeconfig.dev.json
+/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/bin/Debug/netcoreapp2.2/TelegramChat.dll
+/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/bin/Debug/netcoreapp2.2/TelegramChat.pdb
+/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/obj/Debug/netcoreapp2.2/TelegramChat.csprojAssemblyReference.cache
+/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/obj/Debug/netcoreapp2.2/TelegramChat.AssemblyInfoInputs.cache
+/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/obj/Debug/netcoreapp2.2/TelegramChat.AssemblyInfo.cs
+/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/obj/Debug/netcoreapp2.2/TelegramChat.dll
+/home/fabio/Sources/Pessoal/Samples/DotNet/TelegramChat/TelegramChat/obj/Debug/netcoreapp2.2/TelegramChat.pdb
