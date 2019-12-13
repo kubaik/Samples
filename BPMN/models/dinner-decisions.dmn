@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="dinnerDecisions" name="Dinner Decisions&#10;&#10;" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.3.5">
+  <decision id="dish" name="Dish">
+    <extensionElements>
+      <biodi:bounds x="156" y="81" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="Season">
+        <inputExpression id="inputExpression_1" typeRef="string" expressionLanguage="FEEL">
+          <text>season</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0e94xwu" label="How many guests">
+        <inputExpression id="LiteralExpression_05jw7jh" typeRef="integer">
+          <text>guestCount</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Dish" name="desiredDish" typeRef="string" />
+      <rule id="DecisionRule_1pvvrgd">
+        <inputEntry id="UnaryTests_0bbjrfc">
+          <text>"Fall"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tva1md">
+          <text>&lt;= 8</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_155szx5">
+          <text>"Spareribs"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13ya3jk">
+        <inputEntry id="UnaryTests_0p6u6qv">
+          <text>"Winter"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mkn8gd">
+          <text>&lt;= 8</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11tca5t">
+          <text>"Roastbeef"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0z1kxib">
+        <inputEntry id="UnaryTests_08mot7m">
+          <text>"Spring"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0aw9j80">
+          <text>&lt;= 4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05p9ss4">
+          <text>"Dry Aged Gourmet Steak"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15dcvrm">
+        <description>Save money</description>
+        <inputEntry id="UnaryTests_1siyt9u">
+          <text>"Spring"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ib6ll6">
+          <text>[5..8]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0etisen">
+          <text>"Streak"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wdxhhk">
+        <description>Less effort</description>
+        <inputEntry id="UnaryTests_03w744x">
+          <text>"Fall","Winter","Spring"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ho2188">
+          <text>&gt; 8</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1t0zb8o">
+          <text>"Stew'</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01e99k6">
+        <description>Hey, why not?</description>
+        <inputEntry id="UnaryTests_02j50c2">
+          <text>"Summer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10svcsb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1x6kj3g">
+          <text>"Light salad and nice steak"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13y6bb8">
+        <inputEntry id="UnaryTests_06lrwzw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vtwngd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n5gm2v">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="beverages" name="Beverages">
+    <extensionElements>
+      <biodi:bounds x="482" y="82" width="180" height="80" />
+      <biodi:edge source="dish">
+        <biodi:waypoints x="336" y="121" />
+        <biodi:waypoints x="482" y="121" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredDecision href="#dish" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0jlss79" hitPolicy="COLLECT">
+      <input id="InputClause_0rj0760" label="Dish">
+        <inputExpression id="LiteralExpression_1nikib8" typeRef="string">
+          <text>desiredDish</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_07pgkg8" label="Guests with children">
+        <inputExpression id="LiteralExpression_0cvrggl" typeRef="boolean">
+          <text>guestsWithChildren</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0fp8r7r" label="Beverages" name="beverages" typeRef="string" />
+      <rule id="DecisionRule_08necip">
+        <inputEntry id="UnaryTests_0bmk802">
+          <text>"Spareribs"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bjmlmk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1oeocmg">
+          <text>"Aecht"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bykc63">
+        <inputEntry id="UnaryTests_0eej2l2">
+          <text>"Stew"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z70bbk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ianaji">
+          <text>"Guiness"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0f8dn04">
+        <inputEntry id="UnaryTests_03mw9lb">
+          <text>"Roastbeef"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b481ps">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15a874s">
+          <text>"Bordeaux"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0joa4vl">
+        <inputEntry id="UnaryTests_1dxz7kt">
+          <text>"Steak", "Dry Aged Gourmet Steak", "Light salad and nice steak"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02kjm8w">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tyej88">
+          <text>"Pinot Noir"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0emsbfe">
+        <inputEntry id="UnaryTests_1jxss9u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qysu2x">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00u083i">
+          <text>"Apple Juice"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16jovh5">
+        <inputEntry id="UnaryTests_0i4cqsz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b4px66">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lmhypf">
+          <text>"Water"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
