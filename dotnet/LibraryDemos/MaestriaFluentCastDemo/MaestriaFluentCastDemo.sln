@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentCastDemo", "FluentCastDemo\FluentCastDemo.csproj", "{28208882-6577-4D4D-9E7F-7D3C4930B876}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaestriaFluentCastDemo", "MaestriaFluentCastDemo\MaestriaFluentCastDemo.csproj", "{28208882-6577-4D4D-9E7F-7D3C4930B876}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
