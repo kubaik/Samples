@@ -9,7 +9,7 @@ namespace StringFormatDemo
         public decimal Valor { get; set; }
         public string DocumentoCliente { get; set; }
         public string Tipo { get; set; }
-        public string CodigoAts { get; set; }
+        public string CodigoInterno { get; set; }
     }
 
     class Program
@@ -24,7 +24,7 @@ namespace StringFormatDemo
                     Valor = 10,
                     DocumentoCliente = "doc123",
                     Tipo = "Carga avulsa",
-                    CodigoAts = "5555"
+                    CodigoInterno = "5555"
                 },
                 new ConciliacaoItem
                 {
@@ -32,7 +32,7 @@ namespace StringFormatDemo
                     Valor = 15.5m,
                     DocumentoCliente = "doc456",
                     Tipo = "Carga avulsa",
-                    CodigoAts = "5555"
+                    CodigoInterno = "5555"
                 },
             };
 
@@ -40,10 +40,9 @@ namespace StringFormatDemo
             foreach (var item in itens)
             {
                 Console.WriteLine(TokenStringFormat.Format(
-                    "Exemplo linha dinamica => {DataTransacao:yyyy-MM-dd HH:mm:ss};{Valor:N2};{DocumentoCliente};{Tipo};{CodigoAts}",
+                    "Exemplo linha dinamica => {DataTransacao:yyyy-MM-dd HH:mm:ss};{Valor:N2};{DocumentoCliente};{Tipo};{CodigoInterno}",
                     item));
             }
-//            Console.WriteLine(TokenStringFormat.Format("{name} was born on {dob:D}. {name} was {weight} lbs. and {height} inches long.", new {name = "John", dob = DateTime.Today, weight = 11, height = 19}));
         }
     }
 }
