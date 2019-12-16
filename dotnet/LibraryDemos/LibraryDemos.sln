@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaestriaFluentCastDemo", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringFormatDemo", "StringFormatDemo\StringFormatDemo.csproj", "{6BDDCE0B-BB8B-4657-B7B7-5C229499E6BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageFormatDemo", "MessageFormatDemo\MessageFormatDemo.csproj", "{2B8D616B-89B0-4E27-8C8B-3E7AC206AA99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{6BDDCE0B-BB8B-4657-B7B7-5C229499E6BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BDDCE0B-BB8B-4657-B7B7-5C229499E6BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BDDCE0B-BB8B-4657-B7B7-5C229499E6BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B8D616B-89B0-4E27-8C8B-3E7AC206AA99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B8D616B-89B0-4E27-8C8B-3E7AC206AA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B8D616B-89B0-4E27-8C8B-3E7AC206AA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B8D616B-89B0-4E27-8C8B-3E7AC206AA99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

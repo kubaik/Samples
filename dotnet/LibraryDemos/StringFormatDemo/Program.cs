@@ -39,9 +39,10 @@ namespace StringFormatDemo
 
             foreach (var item in itens)
             {
-                Console.WriteLine(TokenStringFormat.Format(
+                var line = TokenStringFormat.Format(
                     "Exemplo linha dinamica => {DataTransacao:yyyy-MM-dd HH:mm:ss};{Valor:N2};{DocumentoCliente};{Tipo};{CodigoInterno}",
-                    item));
+                    item);
+                Console.WriteLine(line);
             }
         }
     }
