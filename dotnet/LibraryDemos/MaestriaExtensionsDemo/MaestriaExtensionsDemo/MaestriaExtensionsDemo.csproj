@@ -6,6 +6,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Maestria.Extensions" Version="1.0.0" />
+        <PackageReference Include="Maestria.Extensions" Version="1.0.5" />
     </ItemGroup>
 </Project>
