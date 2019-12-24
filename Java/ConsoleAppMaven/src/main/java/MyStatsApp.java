@@ -22,6 +22,7 @@ public class MyStatsApp {
      * @param args an array of String arguments to be parsed
      */
     public void run(String[] args) {
+        System.out.println("Mavem Console App Start");
         CommandLine line = parseArguments(args);
 
         if (line.hasOption("filename")) {
