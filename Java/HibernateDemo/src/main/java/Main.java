@@ -2,6 +2,9 @@ import models.Endereco;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -15,6 +18,7 @@ public class Main {
     public static final String DATABASE_NAME = "test-java-hibernate";
 
     private SessionFactory _sessionFactory;
+    private EntityManagerFactory _entityManagerFactory;
 
     public static void main(String[] args) {
         System.out.println("Hibernate Demo");
@@ -26,11 +30,14 @@ public class Main {
     }
 
     private void hibernateDemo() {
-        _sessionFactory = createHibernateFactory();
-        insertEndereco();
+//        _sessionFactory = createHibernateFactoryWithoutPersistenceXml();
+//        insertEnderecoWithSessonFactory();
+
+        _entityManagerFactory = createEntityManagerFactory();
+        insertEnderecoWithEntityManager();
     }
 
-    private void insertEndereco() {
+    private void insertEnderecoWithSessonFactory() {
         var end = new Endereco();
         end.setCodigo(1);
         end.setRua("Av. Getúlio Vargas");
@@ -51,7 +58,31 @@ public class Main {
         }
     }
 
-    private SessionFactory createHibernateFactory() {
+    private void insertEnderecoWithEntityManager() {
+        var end = new Endereco();
+        end.setCodigo(2);
+        end.setRua("Teste 2");
+        end.setCidade("Idade 2");
+        end.setEstado("SC");
+        end.setCep("4419999");
+
+        var manager = _entityManagerFactory.createEntityManager();
+        try {
+            manager.getTransaction().begin();
+            try {
+                manager.merge(end);
+                manager.getTransaction().commit();
+            } catch (Exception e) {
+                System.out.println("Transação falhou : ");
+                e.printStackTrace();
+                manager.getTransaction().rollback();
+            }
+        } finally {
+            manager.close();
+        }
+    }
+
+    private SessionFactory createHibernateFactoryWithoutPersistenceXml() {
         var config = new Configuration().
                 setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect").
                 setProperty("hibernate.connection.driver_class", "org.postgresql.Driver").
@@ -60,10 +91,13 @@ public class Main {
                 setProperty("hibernate.connection.password", PASSWORD).
                 setProperty("hibernate.show_sql", "true");
 
-//        config.addClass(Endereco.class);
-        config.addFile("/home/fabio/Sources/Pessoal/Samples/Java/HibernateDemo/src/main/java/models/Endereco.hbm.xml");
-
+        config.addClass(Endereco.class);
         return config.buildSessionFactory();
+    }
+
+    private EntityManagerFactory createEntityManagerFactory() {
+        var factory = Persistence.createEntityManagerFactory("test-hibernate");
+        return factory;
     }
 
     public void printPostgreSqlVersion() {

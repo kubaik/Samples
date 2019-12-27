@@ -5,7 +5,7 @@
 <hibernate-mapping
         package="models">
     <class name="Endereco">
-        <id name="codigo" column="id" type="integer"/>
+        <id name="codigo" column="id" type="integer" />
         <property name="rua"/>
         <property name="estado"/>
         <property name="cep"/>
