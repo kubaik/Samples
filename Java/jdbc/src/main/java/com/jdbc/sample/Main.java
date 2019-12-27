@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) {
-        var url = "jdbc:postgresql://localhost:5432/teste-jdbc";
+        var url = "jdbc:postgresql://localhost:5432/teste";
         var user = "postgres";
         var password = "123456*";
 
