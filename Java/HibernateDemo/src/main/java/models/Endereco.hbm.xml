@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping
+        package="models">
+    <class name="Endereco">
+        <id name="codigo" column="id" type="integer"/>
+        <property name="rua"/>
+        <property name="estado"/>
+        <property name="cep"/>
+        <property name="cidade"/>
+    </class>
+</hibernate-mapping>
