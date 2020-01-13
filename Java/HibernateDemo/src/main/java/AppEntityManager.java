@@ -16,6 +16,7 @@ public class AppEntityManager {
     }
 
     private void listEnderecos() {
+        System.out.println("beginning of listEnderecos");
         var em = _entityManagerFactory.createEntityManager();
         try {
             var builder = em.getCriteriaBuilder();
@@ -30,9 +31,11 @@ public class AppEntityManager {
             em.close();
         }
         System.out.println("end of listEnderecos");
+        System.out.println("");
     }
 
     private void printOneEndereco() {
+        System.out.println("beginning of printOneEndereco");
         var em = _entityManagerFactory.createEntityManager();
         try {
             var end = em.createQuery("from Endereco e where e.codigo = :codigo", Endereco.class)
@@ -45,9 +48,11 @@ public class AppEntityManager {
             em.close();
         }
         System.out.println("end of printOneEndereco");
+        System.out.println("");
     }
 
     private void insertEndereco() {
+        System.out.println("beginning of insertEndereco");
         var end = new Endereco();
         end.setCodigo(2);
         end.setRua("Teste 2");
@@ -69,6 +74,9 @@ public class AppEntityManager {
         } finally {
             em.close();
         }
+
+        System.out.println("end of insertEndereco");
+        System.out.println("");
     }
 
     private EntityManagerFactory createEntityManagerFactory() {
