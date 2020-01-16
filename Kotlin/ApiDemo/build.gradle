@@ -28,5 +28,7 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version" // Required for Kotlin integration
     compile "org.springframework.boot:spring-boot-starter-web"
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.9'
+    compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.4.10.Final'
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
