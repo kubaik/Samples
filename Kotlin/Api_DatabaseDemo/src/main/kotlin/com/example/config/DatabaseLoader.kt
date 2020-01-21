@@ -3,27 +3,27 @@ package com.example.config
 import com.example.domain.item.ItemOrder
 import com.example.domain.product.Product
 import com.example.domain.po.PurchaseOrder
-//import com.example.domain.item.ItemRepository
+import com.example.domain.item.ItemRepository
 import com.example.domain.product.ProductRepository
-//import com.example.domain.po.PurchaseRepository
+import com.example.domain.po.PurchaseRepository
 import org.springframework.boot.CommandLineRunner
 import org.springframework.stereotype.Component
 import java.math.BigDecimal
 
 @Component
 class DatabaseLoader(
-        private val productRepository: ProductRepository
-//        private val purchaseRepository: PurchaseRepository,
-//        private val itemRepository: ItemRepository
-): CommandLineRunner {
+        private val productRepository: ProductRepository,
+        private val purchaseRepository: PurchaseRepository,
+        private val itemRepository: ItemRepository
+) : CommandLineRunner {
 
     override fun run(vararg args: String?) {
         saveProducts()
-//        savePurchases()
-//        saveItems()
+        savePurchases()
+        saveItems()
     }
 
-    fun saveProducts(){
+    fun saveProducts() {
         val list = mutableListOf<Product>().apply {
             add(Product(description = "Notebook"))
             add(Product(description = "Desktop"))
@@ -35,7 +35,7 @@ class DatabaseLoader(
         productRepository.saveAll(list)
     }
 
-    /*fun savePurchases(){
+    fun savePurchases() {
         val list = mutableListOf<PurchaseOrder>().apply {
             add(PurchaseOrder(customer = "Info Store"))
             add(PurchaseOrder(customer = "PCI Informática"))
@@ -45,7 +45,7 @@ class DatabaseLoader(
         purchaseRepository.saveAll(list)
     }
 
-    fun saveItems(){
+    fun saveItems() {
         val list = mutableListOf<ItemOrder>().apply {
             add(ItemOrder(id = 0, product = Product(id = 1), quantity = 2, purchaseOrder = PurchaseOrder(id = 1),
                     value = BigDecimal.valueOf(2490.44)))
@@ -63,5 +63,5 @@ class DatabaseLoader(
                     value = BigDecimal.valueOf(5690.44)))
         }
         itemRepository.saveAll(list)
-    }*/
+    }
 }
