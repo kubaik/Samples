@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workers", "Workers", "{844824D4-1060-45D7-9628-327162E57E2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.Api", "Movie.Api\Movie.Api.csproj", "{0CD8C0CA-2E58-4808-8059-129D652AC571}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actor.Api", "Actor.Api\Actor.Api.csproj", "{B3BFE7DC-4294-41BF-AC8C-6AEBAC43F7D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CA243BE6-AC02-43A4-80C7-A2E8CC2136D7}"
+ProjectSection(SolutionItems) = preProject
+	kong-compose.yml = kong-compose.yml
+	README.md = README.md
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0CD8C0CA-2E58-4808-8059-129D652AC571} = {844824D4-1060-45D7-9628-327162E57E2B}
+		{B3BFE7DC-4294-41BF-AC8C-6AEBAC43F7D1} = {844824D4-1060-45D7-9628-327162E57E2B}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CD8C0CA-2E58-4808-8059-129D652AC571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CD8C0CA-2E58-4808-8059-129D652AC571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CD8C0CA-2E58-4808-8059-129D652AC571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CD8C0CA-2E58-4808-8059-129D652AC571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3BFE7DC-4294-41BF-AC8C-6AEBAC43F7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3BFE7DC-4294-41BF-AC8C-6AEBAC43F7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3BFE7DC-4294-41BF-AC8C-6AEBAC43F7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3BFE7DC-4294-41BF-AC8C-6AEBAC43F7D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
