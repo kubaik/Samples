@@ -89,3 +89,34 @@ services:
       - kong-net
     volumes:
       - kong_data:/var/lib/postgresql/data
+        
+#  https://hub.docker.com/r/pgbi/kong-dashboard 
+#  dashboard:
+#    image: pgbi/kong-dashboard
+#    command: start --kong-url http://kong:8001
+#    depends_on:
+#      kong:
+#        condition: service_healthy
+#    ports:
+#      - "8080:8080"
+#    networks:
+#      - kong-net
+    
+  dashboard:      
+      image: pantsel/konga
+      command: start --kong-url http://kong:8001
+      depends_on:
+        kong:
+          condition: service_healthy
+      ports:
+        - "1337:1337"
+      environment:
+        NODE_ENV: production
+      networks:
+        - kong-net
+         
+#      docker run -p 1337:1337 \
+#      --link kong:kong \
+#      --name konga \
+#      -e "NODE_ENV=production" \ // or "development" | defaults to 'development'
+#      pantsel/konga

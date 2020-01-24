@@ -5,5 +5,9 @@
         <RootNamespace>Actor.Api</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="KongRegister" Version="3.0.0" />
+    </ItemGroup>
+
 
 </Project>
