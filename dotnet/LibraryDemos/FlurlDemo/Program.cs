@@ -41,7 +41,7 @@ namespace FlurlDemo
                           repo.fork.ToString().PadRight(8) +
                           repo.created_at.ToLocalTime().ToString("dd/MM/yyyy HH:mm").PadRight(18) +
                           repo.updated_at.ToLocalTime().ToString("dd/MM/yyyy HH:mm").PadRight(18) +
-                          repo.url.PadRight(80));
+                          repo.html_url.PadRight(80));
         }
     }
 }
