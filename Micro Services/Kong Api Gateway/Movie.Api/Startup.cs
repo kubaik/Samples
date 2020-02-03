@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Flurl.Http;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -43,6 +44,21 @@ namespace Movie.Api
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            "http://localhost:8001/services"
+                .AllowAnyHttpStatus()
+                .PostMultipartAsync(content => content
+                    .AddString("name", "demo-movies-api")
+                    .AddString("url", "http://192.168.0.108:5000"))
+                .Wait();
+
+            "http://localhost:8001/services/demo-movies-api/routes"
+                .AllowAnyHttpStatus()
+                .PostMultipartAsync(content => content
+                    .AddString("name", "demo-movies-api")
+                    .AddString("hosts[]", "localhost")
+                    .AddString("paths[]", "/(?i)Movies/Api"))
+                .Wait();
         }
     }
 }

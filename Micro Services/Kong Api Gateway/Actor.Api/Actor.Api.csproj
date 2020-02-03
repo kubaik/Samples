@@ -6,7 +6,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Flurl.Http" Version="2.4.2" />
       <PackageReference Include="KongRegister" Version="3.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="mono_crash.mem.12263.1.blob" />
+      <None Remove="mono_crash.mem.22016.1.blob" />
+      <None Remove="mono_crash.mem.25561.1.blob" />
     </ItemGroup>
 
 

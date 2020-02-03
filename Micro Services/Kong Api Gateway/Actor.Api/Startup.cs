@@ -1,3 +1,9 @@
+using System;
+using System.Net;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
+using Flurl;
+using Flurl.Http;
 using KongRegister.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,7 +36,7 @@ namespace Actor.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -39,6 +45,21 @@ namespace Actor.Api
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
             app.UseKongRegisterController();
+            
+            "http://localhost:8001/services"
+                .AllowAnyHttpStatus()
+                .PostMultipartAsync(content => content
+                    .AddString("name", "demo-actors-api")
+                    .AddString("url", "http://192.168.0.108:5001"))
+                .Wait();
+
+            "http://localhost:8001/services/demo-actors-api/routes"
+                .AllowAnyHttpStatus()
+                .PostMultipartAsync(content => content
+                    .AddString("name", "demo-actors-api")
+                    .AddString("hosts[]", "localhost")
+                    .AddString("paths[]", "/(?i)Actors/Api"))
+                .Wait();
         }
     }
 }
