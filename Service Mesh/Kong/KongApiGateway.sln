@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CA243BE6-AC02-43A4-80C7-A2E8CC2136D7}"
+ProjectSection(SolutionItems) = preProject
+	README.md = README.md
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Simple Service Mesh", "1. Simple Service Mesh", "{965BE882-CFCD-40E7-A45D-7E03970EE2E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actor.Api", "1.Simple Service Mesh\Actor.Api\Actor.Api.csproj", "{BA99C200-5814-4F8B-929C-3FF7D9682B1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.Api", "1.Simple Service Mesh\Movie.Api\Movie.Api.csproj", "{23C89F74-BF63-4FBF-B99B-A0B4E22F87FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BA99C200-5814-4F8B-929C-3FF7D9682B1B} = {965BE882-CFCD-40E7-A45D-7E03970EE2E2}
+		{23C89F74-BF63-4FBF-B99B-A0B4E22F87FB} = {965BE882-CFCD-40E7-A45D-7E03970EE2E2}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA99C200-5814-4F8B-929C-3FF7D9682B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA99C200-5814-4F8B-929C-3FF7D9682B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA99C200-5814-4F8B-929C-3FF7D9682B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA99C200-5814-4F8B-929C-3FF7D9682B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23C89F74-BF63-4FBF-B99B-A0B4E22F87FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23C89F74-BF63-4FBF-B99B-A0B4E22F87FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23C89F74-BF63-4FBF-B99B-A0B4E22F87FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23C89F74-BF63-4FBF-B99B-A0B4E22F87FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

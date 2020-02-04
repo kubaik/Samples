@@ -1,3 +1,6 @@
+# DEVELOPER OPTIONS: CHANGE LINK TO YOUT DOCKERHOST MACHINE ON SERVICE "kong" IN OPTION "extra_hosts".
+# YOU MUST BE CONFIGURE "MACHINE_NAME:IP_ADDRESS"
+
 version: '2.1'
 
 volumes:
@@ -5,7 +8,7 @@ volumes:
 
 networks:
   net:
-
+    
 services:
   kong-migrations:
     image: kong:latest
@@ -58,6 +61,10 @@ services:
       KONG_PROXY_ERROR_LOG: /dev/stderr
     networks:
       - net
+      # - host_link:
+          # external: true
+    extra_hosts:
+      - "lnx-naspolini:192.168.0.108"
     ports:
       - "8000:8000/tcp"
       - "8001:8001/tcp"
