@@ -1,28 +1,29 @@
 stack_name="kong"
+compose_file="logstash.yml"
 
 up() {
     echo "upping..."
-    docker-compose -p $stack_name up -d
+    docker-compose -p $stack_name $compose_file up -d
 }
 
 down() {
     echo "downing..."
-    docker-compose -p $stack_name down
+    docker-compose -p $stack_name $compose_file down
 }
 
 down_volumes() {
     echo "downing removing volumes..."
-    docker-compose -p $stack_name down -v
+    docker-compose -p $stack_name $compose_file down -v
 }
 
 start() {
     echo "starting..."
-    docker-compose -p $stack_name start
+    docker-compose -p $stack_name $compose_file start
 }
 
 stop() {
     echo "stoping..."
-    docker-compose -p $stack_name stop
+    docker-compose -p $stack_name $compose_file stop
 }
 
 recreate() {
