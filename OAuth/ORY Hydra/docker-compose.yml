@@ -1,0 +1,50 @@
+version: '3.7'
+
+#SECRETS_SYSTEM = TtIVxPnVIW7R4dINrtZREiY99goR9N6T
+#DSN = postgres://hydra:secret@postgres:5432/hydra?sslmode=disable
+
+volumes:
+  pg-data:
+
+networks:
+  default:
+    driver: bridge
+
+services: 
+  postgres:
+    image: postgres:9.6
+    # name: ory-hydra-example--postgres
+    environment: 
+      POSTGRES_USER: hydra
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: hydra
+    ports: 
+      - "10010:5432"
+    volumes: 
+      - pg-data:/var/lib/postgresql/data
+    networks: 
+      - default
+  
+  db-migration:
+    image: oryd/hydra:v1.0.8          
+    command: migrate sql --yes "postgres://hydra:secret@postgres:5432/hydra?sslmode=disable"
+    depends_on: 
+      - postgres
+    networks: 
+      - default
+
+  hydra:    
+    image: oryd/hydra:v1.0.8
+    # name: ory-hydra-example--hydra
+    command: serve all --dangerous-force-http
+    environment: 
+      SECRETS_SYSTEM: TtIVxPnVIW7R4dINrtZREiY99goR9N6T
+      DSN: postgres://hydra:secret@postgres:5432/hydra?sslmode=disable
+      URLS_SELF_ISSUER: http://192.168.101.76:9000/
+      URLS_CONSENT: http://192.168.101.76:9020/consent
+      URLS_LOGIN: http://192.168.101.76:9020/login
+    ports: 
+      - "10000:4444"
+      - "10001:4445"
+    networks: 
+      - default
