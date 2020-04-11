@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractDemo", "TesseractDemo.csproj", "{56796CD8-ED56-4F51-98F3-687779E9D702}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractOcrDemo", "TesseractOcrDemo.csproj", "{56796CD8-ED56-4F51-98F3-687779E9D702}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

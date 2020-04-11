@@ -1,17 +1,19 @@
 ﻿using System;
+using System.IO;
 using Tesseract;
 
-namespace TesseractDemo
+namespace TesseractOcrDemo
 {
     class Program
     {
-        private const string TessDataFolder = @"C:\Tesseract-OCR\trained_current\tessdata";
+        private const string TessDataFolder = @"C:\Tesseract-OCR\trained_my\tessdata";
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Tesseract Demo!");
-            const string sourceFile = @"C:\Tesseract-OCR\input_samples\cnh\rg.jpg";
-            var text = DoOcr(sourceFile, "eng");
+
+            var sourceFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\input_samples\doc-por.jpg");
+            var text = DoOcr(sourceFile, "por");
             Console.WriteLine(text);
         }
 
@@ -21,7 +23,7 @@ namespace TesseractDemo
             using var img = Pix.LoadFromFile(imagePath);
             var page = engine.Process(img);
             var result = page.GetText();
-            return string.IsNullOrWhiteSpace(result) ? "Ocr is finished. Return empty" : result.Trim();
+            return string.IsNullOrWhiteSpace(result) ? "OCR concluído. Nenhum texto identificado." : result.Trim();
         }
     }
 }
