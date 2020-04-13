@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesseract-v3.3.0-Demo", "Tesseract-v3.3.0-Demo\Tesseract-v3.3.0-Demo.csproj", "{B994EC83-9DD3-4F3C-B948-BCD282CDDB3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractSharp-v5-alpha-Demo", "TesseractSharp-v5-alpha-Demo\TesseractSharp-v5-alpha-Demo.csproj", "{051F766C-DAE6-40D2-9CFE-54FBB82064E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesseract-v4.1.0-beta-Demo", "Tesseract-v4.1.0-beta-Demo\Tesseract-v4.1.0-beta-Demo.csproj", "{27833329-AA65-4F71-B510-05903CD6EE0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B994EC83-9DD3-4F3C-B948-BCD282CDDB3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B994EC83-9DD3-4F3C-B948-BCD282CDDB3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B994EC83-9DD3-4F3C-B948-BCD282CDDB3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B994EC83-9DD3-4F3C-B948-BCD282CDDB3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051F766C-DAE6-40D2-9CFE-54FBB82064E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051F766C-DAE6-40D2-9CFE-54FBB82064E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051F766C-DAE6-40D2-9CFE-54FBB82064E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051F766C-DAE6-40D2-9CFE-54FBB82064E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27833329-AA65-4F71-B510-05903CD6EE0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27833329-AA65-4F71-B510-05903CD6EE0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27833329-AA65-4F71-B510-05903CD6EE0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27833329-AA65-4F71-B510-05903CD6EE0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
