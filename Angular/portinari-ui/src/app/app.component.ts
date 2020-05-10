@@ -16,8 +16,8 @@ export class AppComponent {
 
   readonly data = [
     {id: 1, name: 'Fábio Naspolini', cidade: 'São José dos Pinhais'},
-    {id: 3, name: 'Fábio Naspolini', cidade: 'Curitiba'},
-    {id: 2, name: 'Fábio Naspolini', cidade: 'Criciúma'},
+    {id: 3, name: 'Teste Fabio', cidade: 'Curitiba'},
+    {id: 2, name: 'Fábio 2', cidade: 'Criciúma'},
   ];
 
   private onClick() {
