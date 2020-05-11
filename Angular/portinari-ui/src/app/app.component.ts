@@ -10,17 +10,12 @@ import { PoMenuItem } from '@po-ui/ng-components';
 export class AppComponent {
 
   readonly menus: Array<PoMenuItem> = [
-    { label: 'Início', action: this.onClick.bind(this), icon: 'po-icon-home', shortLabel: 'Início' },
-    { label: 'Cadastro de Usuários', action: this.onClick.bind(this), icon: 'po-icon-users', shortLabel: 'Usuários'}
-  ];
-
-  readonly data = [
-    {id: 1, name: 'Fábio Naspolini', cidade: 'São José dos Pinhais'},
-    {id: 3, name: 'Teste Fabio', cidade: 'Curitiba'},
-    {id: 2, name: 'Fábio 2', cidade: 'Criciúma'},
+    // { label: 'Início', action: this.onClick.bind(this), icon: 'po-icon-home', shortLabel: 'Início' },
+    { label: 'Início', link: '/home', icon: 'po-icon-home', shortLabel: 'Início' },
+    { label: 'Cadastro de Usuários', link: '/usuario', icon: 'po-icon-users', shortLabel: 'Usuários'}
   ];
 
   private onClick() {
-    alert('Clicked in menu item')
+    alert('Clicked in menu item');
   }
 }
